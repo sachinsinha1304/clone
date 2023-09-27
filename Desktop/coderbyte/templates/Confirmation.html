@@ -1,0 +1,136 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>CoderByte</title>
+
+    <style>
+
+
+        body{
+            height: 100%;
+            padding : 1% 1% 4% 1%;
+            color : white;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+
+        .bg{
+            background-image: url("{% static 'istockphoto-1341408852-640x640.jpg' %}");
+            height: 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+
+        }
+
+        .box{
+            border : 1px solid white;
+            border-radius : 5px;
+        }
+
+        .box-term{
+            border : 1px solid white;
+            border-radius : 5px;
+            max-width: 100%;
+            min-height:300px;
+            max-height: 720px;
+        }
+
+    </style>
+<body class="bg">
+    <div class="row">
+        <div class="col-md-6 ">
+            <br>
+            <h1>Personal Information</h1>
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>Name</h4>
+                </div>
+                <div class="col-md-8 box">
+                    <h4>{{obj.name}}</h4>
+                </div>
+
+            </div>
+            <br>
+
+
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>Email</h4>
+                </div>
+                <div class="col-md-8 box">
+                    <h4>{{obj.email}}</h4>
+                </div>
+
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>Gender</h4>
+                </div>
+                <div class="col-md-8 box">
+                    <h4>{{obj.gender}}</h4>
+                </div>
+
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>Contact</h4>
+                </div>
+                <div class="col-md-8 box">
+                    <h4>{{obj.contact}}</h4>
+                </div>
+
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <h4>Address</h4>
+                </div>
+                <div class="col-md-8 box">
+                    <h4>{{obj.address}}</h4>
+                </div>
+
+            </div>
+
+            <a href="/start-scheduler"><button type="submit" class="btn btn-primary">Start Test</button></a>
+
+        </div>
+
+        <div class="col-md-6 box-term overflow-scroll" style="height:60%;">
+            <h1> Terms and Conditions </h1>
+            <p>The terms and conditions for an online coding exam may vary depending on the specific platform or organization conducting the exam. However, here are some common elements that are typically included in the terms and conditions: </p>
+            <ul>
+                <li>Eligibility: Clearly define who is eligible to participate in the coding exam. This may include specifying any prerequisites, such as age restrictions, educational qualifications, or professional experience.</li>
+                <li>Registration and Entry: Outline the process and requirements for registering for the exam. This may include providing personal information, creating an account, and paying any applicable fees. Specify the deadline for registration and any cancellation or refund policies.</li>
+                <li>Exam Rules and Conduct: Specify the rules and expectations regarding the conduct of the exam. This may include guidelines for fair play, prohibition of cheating or plagiarism, and any restrictions on communication or use of external resources during the exam.</li>
+                <li>Exam Format and Duration: Describe the format of the coding exam, including the types of questions or coding tasks, the programming languages or tools allowed, and the expected duration of the exam. Clarify any specific instructions or requirements for submitting the answers or code solutions.</li>
+                <li>Intellectual Property Rights: Address the ownership and intellectual property rights of the submitted code solutions. Clarify whether participants retain ownership or grant any rights to the organization conducting the exam.</li>
+                <li>Results and Evaluation: Explain how the exam will be evaluated and the criteria for scoring or ranking participants. Specify the timeline for announcing the results and any provisions for feedback or appeals.</li>
+                <li>Privacy and Data Protection: Outline how personal information and data collected during the exam will be handled, stored, and protected in accordance with relevant data protection laws or regulations.</li>
+                <li>Liability and Disclaimers: Include disclaimers and limitations of liability regarding any issues or consequences arising from participation in the exam, including technical failures, loss of data, or inaccuracies in the exam content.</li>
+                <li>Amendments and Termination: Reserve the right to make changes to the terms and conditions if necessary. Specify the conditions under which the exam may be canceled, postponed, or terminated, and the consequences for participants in such cases.</li>
+                <li>Governing Law and Jurisdiction: Specify the governing law and jurisdiction that will apply in case of any disputes or legal matters related to the exam.
+            </ul>
+
+        <p>It's important to note that these are general guidelines, and the specific terms and conditions may vary for each online coding exam. Participants should carefully review and agree to the terms and conditions before participating in the exam to ensure compliance and understanding of the rules and requirements.</p>
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>CoderByte</title>
+    <style>
+
+        h3{
+            text-align : justify;
+        }
+
+        body{
+            height: 100%;
+            padding : 1% 1% 4% 1%;
+            color : white;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+
+        .bg{
+            background-image: url("{% static 'istockphoto-1341408852-640x640.jpg' %}");
+            height: 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+
+        }
+
+        .box-content{
+            margin : 2% 2% 2% 2%;
+            padding : 3% 3% 3% 3%;
+        }
+
+        .box-content-question{
+            margin : auto;;
+            border : 1px solid white;
+            padding : 3% 2% 2% 3%;
+            border-radius : 5px;
+
+        }
+        .box-content-extra{
+            margin : 30% 15% 18% 10%;
+            padding : 3% 3% 3% 3%;
+        }
+
+
+    </style>
+
+
+</head>
+
+
+<body class="bg">
+
+    <div class ='row'>
+
+        <div class="col-md-6 box-content">
+            {% for i in obj %}
+            <div class="box-content-question">
+                <h4>{{i.name}}</h4>
+                <a href="/solve/{{i.id}}"><button type="button" class="btn btn-outline-primary">Solve</button></a>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+
+        <div class="col-md-4">
+            <div class="box-content-extra">
+                <h4 id = 'timer'>{{time}}</h4>
+                <script>
+                    var t = {{time}};
+                    const time = document.getElementById('timer');
+
+                    setInterval(updateTimer, 1000);
+
+                    function updateTimer() {
+                        t--;
+                       time.innerHTML = t;
+                       if(t == 0) location.replace('/end_page')
+                    }
+                </script>
+                <h4>Question Submitted : {{question}}</h4>
+                <a href="/end_page"><button type="button" class="btn btn-outline-primary">End Test</button></a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</body>
+</html>
